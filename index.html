@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Sönmez Sinemaları</title>
-    <link rel="icon" href="/images/icon3.webp">
+    <link rel="icon" href="/images/icon3.webp" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -19,6 +19,35 @@
         font-family: "Playfair Display";
         letter-spacing: 5px;
       }
+      .w3-top {
+        z-index: 1;
+      }
+      /* Mobile responsiveness */
+      @media screen and (max-width: 600px) {
+        .w3-bar-item {
+          font-size: 16px;
+        }
+        h1 {
+          font-size: 36px;
+        }
+        .w3-image {
+          width: 100% !important;
+        }
+        .w3-row > .w3-col {
+          width: 100% !important;
+          text-align: center;
+        }
+        .w3-col.s6 {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Slider Styling */
+      .w3-display-container .mySlides {
+        width: 100%;
+        height: 750px; /* Yüksekliği buradan değiştirdik */
+        object-fit: cover; /* Resmin orantılı bir şekilde sığmasını sağlar */
+      }
     </style>
   </head>
   <body>
@@ -29,7 +58,6 @@
         style="letter-spacing: 4px"
       >
         <a href="#home" class="w3-bar-item w3-button">Sönmez Sinemaları</a>
-        <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
           <a href="#about" class="w3-bar-item w3-button">Hakkında</a>
           <a href="#movies" class="w3-bar-item w3-button">Filmler</a>
@@ -38,18 +66,32 @@
       </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header Section with Slider -->
     <header
       class="w3-display-container w3-content w3-wide"
       style="max-width: 1600px; min-width: 500px"
       id="home"
     >
-      <img
-        src="your-image-path.jpg"
-        alt="Sönmez Sinemaları"
-        width="1600"
-        height="700"
-      />
+      <!-- Slider -->
+      <div class="w3-display-container w3-content" style="max-width: 100%">
+        <img
+          class="mySlides w3-animate-fading"
+          src="images/71.jpg"
+          style="width: 100%"
+        />
+        <img
+          class="mySlides w3-animate-fading"
+          src="images/70.jpeg"
+          style="width: 100%"
+        />
+        <img
+          class="mySlides w3-animate-fading"
+          src="images/72.webp"
+          style="width: 100%"
+        />
+      </div>
+
+      <!-- Title -->
       <div class="w3-display-bottomleft w3-padding-large">
         <h1 class="w3-xxlarge" style="background-color: antiquewhite">
           Sönmez Sinemaları
@@ -58,216 +100,219 @@
     </header>
 
     <!-- Page content -->
-        <div class="w3-content" style="max-width: 1100px">
-            <!-- About Section -->
-            <div class="w3-row w3-padding-64" id="about">
-            <div class="w3-col m6 w3-padding-large w3-hide-small">
-                <img
-                src="/images/2.jpg"
-                class="w3-image w3-opacity-min"
-                alt="About"
-                style="width: 100%; height: 750px; object-fit: cover;"
-                />
-            </div>
-        
-            <div class="w3-col m6 w3-padding-large">
-                <h1 class="w3-center">Hakkında</h1>
-                <br/>
-                <h5 class="w3-center">Gelenek 1950'den beri</h5>
-                <p class="w3-large">
-                Sönmez Sinemaları, 1950 yılında Ömer Faruk Sönmez tarafından
-                kurulmuştur. Kuruluşundan bu yana, sinemaseverlere kaliteli film
-                deneyimleri sunmayı amaçlayan şirket, Türkiye'nin en köklü sinema
-                zincirlerinden biri haline gelmiştir. Ömer Faruk Sönmez'in vizyonu
-                ve liderliği altında, Sönmez Sinemaları, yenilikçi teknolojiler ve
-                konforlu salonlarıyla tanınmaktadır. Şirket, her yaştan izleyiciye
-                hitap eden geniş bir film yelpazesi sunarak, aile filmlerinden
-                aksiyon ve dramalara kadar çeşitli türlerde yapımları izleyicilerle
-                buluşturmaktadır. Ayrıca, Sönmez Sinemaları, düzenlediği özel
-                etkinlikler ve film festivalleri ile de sinema kültürüne katkıda
-                bulunmaktadır. Müşteri memnuniyetini her zaman ön planda tutan
-                şirket, sinema salonlarında sunduğu yüksek kaliteli hizmetlerle
-                sektördeki lider konumunu sürdürmektedir.
-                </p>
-        
-                <h5 class="w3-center">Kurucu</h5>
-                <p class="w3-large w3-text-grey w3-hide-medium">
-                Ömer Faruk Sönmez, sinema sektörüne olan tutkusuyla tanınan vizyoner
-                bir girişimcidir. 1925 yılında İstanbul'da doğan Sönmez, genç yaşta
-                sinemaya olan ilgisini keşfetmiş ve bu alanda kariyer yapmaya karar
-                vermiştir. 1950 yılında Sönmez Sinemaları'nı kurarak, Türkiye'de
-                sinema kültürünün gelişimine büyük katkılarda bulunmuştur.
-                </p>
-            </div>
-            </div>
+    <div class="w3-content" style="max-width: 1100px">
+      <!-- About Section -->
+      <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+          <img
+            src="/images/2.jpg"
+            class="w3-image w3-opacity-min"
+            alt="About"
+            style="width: 100%; height: 750px; object-fit: cover"
+          />
         </div>
+
+        <div class="w3-col m6 w3-padding-large">
+          <h1 class="w3-center">Hakkında</h1>
+          <h5 class="w3-center">Gelenek 1950'den beri</h5>
+          <p class="w3-large">
+            Sönmez Sinemaları, 1950 yılında Ömer Faruk Sönmez tarafından
+            kurulmuştur. Kuruluşundan bu yana, sinemaseverlere kaliteli film
+            deneyimleri sunmayı amaçlayan şirket, Türkiye'nin en köklü sinema
+            zincirlerinden biri haline gelmiştir. Ömer Faruk Sönmez'in vizyonu
+            ve liderliği altında, Sönmez Sinemaları, yenilikçi teknolojiler ve
+            konforlu salonlarıyla tanınmaktadır. Şirket, her yaştan izleyiciye
+            hitap eden geniş bir film yelpazesi sunarak, aile filmlerinden
+            aksiyon ve dramalara kadar çeşitli türlerde yapımları izleyicilerle
+            buluşturmaktadır. Ayrıca, Sönmez Sinemaları, düzenlediği özel
+            etkinlikler ve film festivalleri ile de sinema kültürüne katkıda
+            bulunmaktadır. Müşteri memnuniyetini her zaman ön planda tutan
+            şirket, sinema salonlarında sunduğu yüksek kaliteli hizmetlerle
+            sektördeki lider konumunu sürdürmektedir.
+          </p>
+
+          <h5 class="w3-center">Kurucu</h5>
+          <p class="w3-large w3-text-grey">
+            Ömer Faruk Sönmez, sinema sektörüne olan tutkusuyla tanınan vizyoner
+            bir girişimcidir. 1925 yılında İstanbul'da doğan Sönmez, genç yaşta
+            sinemaya olan ilgisini keşfetmiş ve bu alanda kariyer yapmaya karar
+            vermiştir. 1950 yılında Sönmez Sinemaları'nı kurarak, Türkiye'de
+            sinema kültürünün gelişimine büyük katkılarda bulunmuştur.
+          </p>
+        </div>
+      </div>
 
       <hr />
 
       <!-- Movies Section -->
-        <div class="w3-row w3-padding-64" id="movies">
-            <div class="w3-col l9 w3-padding-large">
-            <h1 class="w3-center">Filmler</h1>
-            <br />
-            <div class="w3-row">
-                <div class="w3-col s6">
-                <h4>7. Mühür</h4>
-                <p class="w3-text-grey">
-                    Bu film, sinema kariyerimizde yayınlanmış ilk filmdir.
-                    7. Mühür" (The Seventh Seal), Ingmar Bergman'ın yönettiği 1957 yapımı bir İsveç filmidir. 
-                    Film, Haçlı Seferleri'nden dönen bir Orta Çağ şövalyesi olan Antonius Block'un hikayesini anlatır. 
-                    Antonius, vebanın kasıp kavurduğu Avrupa'da Tanrı'ya olan inancını sorgulamaktadır. 
-                    Ölümle karşılaştığında, hayatını kurtarmak için Ölüm'ü bir satranç oyununa davet eder. 
-                    Bu süreçte, hayatın anlamı, ölüm ve inanç gibi derin temalar işlenir.
-                </p>
-                </div>
-                <div class="w3-col s6">
-                <img
-                    src="/images/mühür.jpg"
-                    class="w3-round w3-image w3-opacity-min"
-                    alt="7. Mühür"
-                    style="width: 100%; height: auto;"
-                />
-                </div>
+      <div class="w3-row w3-padding-64" id="movies">
+        <div class="w3-col l9 w3-padding-large">
+          <h1 class="w3-center">Filmler</h1>
+
+          <div class="w3-row">
+            <div class="w3-col s6">
+              <h4>7. Mühür</h4>
+              <p class="w3-text-grey">
+                Bu film, sinema kariyerimizde yayınlanmış ilk filmdir. 7. Mühür"
+                (The Seventh Seal), Ingmar Bergman'ın yönettiği 1957 yapımı bir
+                İsveç filmidir. Film, Haçlı Seferleri'nden dönen bir Orta Çağ
+                şövalyesi olan Antonius Block'un hikayesini anlatır. Antonius,
+                vebanın kasıp kavurduğu Avrupa'da Tanrı'ya olan inancını
+                sorgulamaktadır. Ölümle karşılaştığında, hayatını kurtarmak için
+                Ölüm'ü bir satranç oyununa davet eder. Bu süreçte, hayatın
+                anlamı, ölüm ve inanç gibi derin temalar işlenir.
+              </p>
             </div>
-            <br />
-        
-            <div class="w3-row">
-                <div class="w3-col s6" style="padding-right: 15px;">
-                  <img
-                    src="/images/godfather.jpg"
-                    class="w3-round w3-image w3-opacity-min"
-                    alt="godfather"
-                    style="width: 100%; height: auto;"
-                  />
-                </div>
-                <div class="w3-col s6" style="padding-left: 1px;">
-                  <h4>Godfather</h4>
-                  <p class="w3-text-grey">
-                    Bu film ilk oscar ödülü alan film yapımımızdır.
-                    "The Godfather," Mario Puzo'nun aynı adlı romanından uyarlanan ve Francis Ford Coppola tarafından yönetilen 1972 yapımı bir filmdir. 
-                    Film, New York'ta yaşayan güçlü bir İtalyan mafya ailesi olan Corleone ailesinin hikayesini anlatır. 
-                    Ailenin başında Don Vito Corleone (Marlon Brando) bulunmaktadır. 
-                    Film, aile içi çatışmalar, ihanetler ve güç mücadeleleri etrafında dönerken, Don Vito'nun oğlu Michael Corleone'nin (Al Pacino) ailenin işlerini devralma sürecini de işler.
-                  </p>
-                </div>
-              </div>
-            <br />
-        
-            <div class="w3-row">
-                <div class="w3-col s6">
-                <h4>Scarface</h4>
-                <p class="w3-text-grey">Bu film en çok gişe hasılatı yaptığımız filmdir.
-                    Scarface," Brian De Palma'nın yönettiği ve Al Pacino'nun başrol oynadığı 1983 yapımı bir suç ve drama filmidir. 
-                    Film, Kübalı bir mülteci olan Tony Montana'nın (Al Pacino) Miami'de suç dünyasında yükselişini ve açgözlülüğünü konu alır. 
-                    Tony Montana, acımasız yöntemleriyle uyuşturucu imparatorluğunu kurarken, güç ve para hırsının onu nasıl yok ettiğini izleriz</p>
-                </div>
-                <div class="w3-col s6">
-                <img
-                    src="/images/scareface.jpg"
-                    class="w3-round w3-image w3-opacity-min"
-                    alt="Film 3"
-                    style="width: 100%; height: auto;"
-                />
-                </div>
+            <div class="w3-col s6">
+              <img
+                src="/images/mühür.jpg"
+                class="w3-round w3-image w3-opacity-min"
+                alt="7. Mühür"
+                style="width: 100%; height: auto"
+              />
             </div>
-            <br />
-        
-            <div class="w3-row">
-                <div class="w3-col s6" style="padding-right: 15px;">
-                <img
-                    src="/images/SelviBoylumAlYazmalim.jpg"
-                    class="w3-round w3-image w3-opacity-min"
-                    alt="Film 4"
-                    style="width: 100%; height: auto;"
-                />
-                </div>
-                <div class="w3-col s6" style="padding-left: 1px;">
-                <h4>Selvi Boylum Al Yazmalım</h4>
-                <p class="w3-text-grey">
-                    Bu film yayınlanmış ilk Türk filmidir.Selvi Boylum Al Yazmalım," 1977 yapımı bir Türk filmidir. 
-                    Atıf Yılmaz'ın yönettiği film, Cengiz Aytmatov'un aynı adlı eserinden uyarlanmıştır. 
-                    Başrollerinde Türkan Şoray ve Kadir İnanır'ın yer aldığı film, Asya ve İlyas'ın destansı aşk hikayesini anlatır. 
-                    Film, sevgi, sadakat ve fedakarlık temalarını işler ve Türk sinemasının en unutulmaz yapımlarından biri olarak kabul edilir.
-                </p>
-                </div>
+          </div>
+
+          <div class="w3-row">
+            <div class="w3-col s6">
+              <h4>Godfather</h4>
+              <p class="w3-text-grey">
+                Bu film ilk oscar ödülü alan film yapımımızdır. "The Godfather,"
+                Mario Puzo'nun aynı adlı romanından uyarlanan ve Francis Ford
+                Coppola tarafından yönetilen 1972 yapımı bir filmdir. Film, New
+                York'ta yaşayan güçlü bir İtalyan mafya ailesi olan Corleone
+                ailesinin hikayesini anlatır. Ailenin başında Don Vito Corleone
+                (Marlon Brando) bulunmaktadır. Film, aile içi çatışmalar,
+                ihanetler ve güç mücadeleleri etrafında dönerken, Don Vito'nun
+                oğlu Michael Corleone'nin (Al Pacino) ailenin işlerini devralma
+                sürecini de işler.
+              </p>
             </div>
+            <div class="w3-col s6">
+              <img
+                src="/images/godfather.jpg"
+                class="w3-round w3-image w3-opacity-min"
+                alt="Godfather"
+                style="width: 100%; height: auto"
+              />
             </div>
+          </div>
+
+          <div class="w3-row">
+            <div class="w3-col s6">
+              <h4>Scarface</h4>
+              <p class="w3-text-grey">
+                Bu film en çok gişe hasılatı yaptığımız filmdir. Scarface,"
+                Brian De Palma'nın yönettiği ve Al Pacino'nun başrol oynadığı
+                1983 yapımı bir suç ve drama filmidir. Film, Kübalı bir mülteci
+                olan Tony Montana'nın (Al Pacino) Miami'de suç dünyasında
+                yükselişini ve açgözlülüğünü konu alır. Tony Montana, acımasız
+                yöntemleriyle uyuşturucu imparatorluğunu kurarken, güç ve para
+                hırsının onu nasıl yok ettiğini izleriz
+              </p>
+            </div>
+            <div class="w3-col s6">
+              <img
+                src="/images/scareface.jpg"
+                class="w3-round w3-image w3-opacity-min"
+                alt="Scarface"
+                style="width: 100%; height: auto"
+              />
+            </div>
+          </div>
+
+          <div class="w3-row">
+            <div class="w3-col s6">
+              <h4>Selvi Boylum Al Yazmalım</h4>
+              <p class="w3-text-grey">
+                Bu film yayınlanmış ilk Türk filmidir.Selvi Boylum Al Yazmalım,"
+                1977 yapımı bir Türk filmidir. Atıf Yılmaz'ın yönettiği film,
+                Cengiz Aytmatov'un aynı adlı eserinden uyarlanmıştır.
+                Başrollerinde Türkan Şoray ve Kadir İnanır'ın yer aldığı film,
+                Asya ve İlyas'ın destansı aşk hikayesini anlatır. Film, sevgi,
+                sadakat ve fedakarlık temalarını işler ve Türk sinemasının en
+                unutulmaz yapımlarından biri olarak kabul edilir.
+              </p>
+            </div>
+            <div class="w3-col s6">
+              <img
+                src="/images/SelviBoylumAlYazmalim.jpg"
+                class="w3-round w3-image w3-opacity-min"
+                alt="Selvi Boylum Al Yazmalım"
+                style="width: 100%; height: auto"
+              />
+            </div>
+          </div>
         </div>
+      </div>
 
       <hr />
 
       <!-- Contact Section -->
       <div class="w3-container w3-padding-64" id="contact">
         <h1>İletişim</h1>
-        <br />
-        <p>
-          Herhangi bir etkinlik için tam hizmet sinema salonları sunuyoruz.
-          İhtiyaçlarınızı anlıyoruz ve hem görünüm hem de tat açısından en
-          yüksek kriterleri karşılayacak şekilde hizmet veriyoruz. Bizimle
-          iletişime geçmekten çekinmeyin.
-        </p>
-        <p class="w3-text-blue-grey w3-large">
-          <b>Sönmez Sinemaları, 123 Sinema Sokak, 45678 İstanbul, Türkiye</b>
-        </p>
         <p>
           Bize telefonla 0123456789 veya email ile info@sonmezsinemalari.com
-          adresinden ulaşabilirsiniz, ya da buradan mesaj gönderebilirsiniz:
+          adresinden ulaşabilirsiniz.
         </p>
         <form action="/action_page.php" target="_blank">
-          <p>
-            <input
-              class="w3-input w3-padding-16"
-              type="text"
-              placeholder="Adınız"
-              required
-              name="Name"
-            />
-          </p>
-          <p>
-            <input
-              class="w3-input w3-padding-16"
-              type="number"
-              placeholder="Kaç kişi"
-              required
-              name="People"
-            />
-          </p>
-          <p>
-            <input
-              class="w3-input w3-padding-16"
-              type="datetime-local"
-              placeholder="Tarih ve saat"
-              required
-              name="date"
-              value="2024-12-02T20:00"
-            />
-          </p>
-          <p>
-            <input
-              class="w3-input w3-padding-16"
-              type="text"
-              placeholder="Mesajınız \ Özel istekler"
-              required
-              name="Message"
-            />
-          </p>
-          <p>
-            <button class="w3-button w3-light-grey w3-section" type="submit">
-              MESAJ GÖNDER
-            </button>
-          </p>
+          <input
+            class="w3-input w3-padding-16"
+            type="text"
+            placeholder="Adınız"
+            required
+            name="Name"
+          />
+          <input
+            class="w3-input w3-padding-16"
+            type="number"
+            placeholder="Kaç kişi"
+            required
+            name="People"
+          />
+          <input
+            class="w3-input w3-padding-16"
+            type="datetime-local"
+            required
+            name="date"
+            value="2024-12-02T20:00"
+          />
+          <input
+            class="w3-input w3-padding-16"
+            type="text"
+            placeholder="Mesajınız \ Özel istekler"
+            required
+            name="Message"
+          />
+          <button class="w3-button w3-light-grey w3-section" type="submit">
+            MESAJ GÖNDER
+          </button>
         </form>
       </div>
 
-      <!-- End page content -->
+      <!-- Footer -->
+      <footer class="w3-center w3-light-grey w3-padding-32">
+        <p>Powered by Ömer Faruk Sönmez</p>
+      </footer>
     </div>
 
-    <!-- Footer -->
-    <footer class="w3-center w3-light-grey w3-padding-32">
-      <p>
-        Powered by Ömer Faruk Sönmez
-      </p>
-    </footer>
+    <!-- Slider Script -->
+    <script>
+      var slideIndex = 0;
+      carousel();
+
+      function carousel() {
+        var slides = document.getElementsByClassName("mySlides");
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(carousel, 5000); // Change image every 5 seconds
+      }
+    </script>
   </body>
 </html>
