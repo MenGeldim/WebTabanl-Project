@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film İçeriği ve İletişim</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Navbar */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+      }
+      nav .container a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      nav .container a:hover {
+        background-color: #ff5e57;
+        color: white;
+      }
+      nav .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #ff5e57;
+      }
+      nav .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      /* Header with Slider */
+      header {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+      header .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      header .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: fade 12s infinite;
+        position: absolute;
+      }
+      header .slider img:nth-child(2) {
+        animation-delay: 4s;
+      }
+      header .slider img:nth-child(3) {
+        animation-delay: 8s;
+      }
+      @keyframes fade {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        33% {
+          opacity: 1;
+        }
+      }
+      header .w3-container {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+      }
+      header h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      header .w3-button {
+        background-color: #ff5e57;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-transform: uppercase;
+      }
+
+      /* Content Section */
+      .content h2 {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 2.5rem;
+        color: #ff5e57;
+      }
+      .content p {
+        text-align: center;
+        font-size: 1.2rem;
+        max-width: 900px;
+        margin: 20px auto;
+        line-height: 1.8;
+      }
+
+      .content h6 {
+        font-weight: 700; /* Kalın yap */
+        margin-top: 15px;
+        color: #333;
+      }
+
+      /* Add padding to sides */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px;
+        background-color: #333;
+        color: white;
+      }
+      footer a {
+        color: #ff5e57;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Button */
+      .w3-button {
+        background-color: #ff5e57;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.5rem;
+        }
+        header p {
+          font-size: 1rem;
+        }
+        .content h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">Anasayfa</a>
+        </div>
+        <div class="menu">
+          <a href="#content">Film İçeriği</a>
+          <a href="#contact">İletişim</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header with Slider -->
+    <header id="home">
+      <div class="slider">
+        <img src="images/gelecegedonus1.jpg" alt="film-1" />
+        <img src="images/gelecegedonus2.jpg" alt="film-2" />
+        <img src="images/gelecegedonus3.webp" alt="film-3" />
+      </div>
+      <div class="w3-container">
+        <h1>Film İçeriği</h1>
+        <p>Film İçeriğinizi Burada Görebilirsiniz</p>
+        <a href="#content" class="w3-button">Film İçeriğine Göz Atın</a>
+      </div>
+    </header>
+
+    <!-- Film Content Section -->
+    <section id="content" class="w3-padding-64">
+      <div class="container">
+        <h2>Film İçeriği</h2>
+        <p>
+          Geleceğe Dönüş (Back to the Future), 1985 yapımı bir bilimkurgu,
+          macera ve komedi filmidir. Yönetmenliğini Robert Zemeckis yapmış,
+          senaryosunu ise Zemeckis ve Bob Gale yazmıştır. Filmin yapımcılığını
+          Steven Spielberg üstlenmiştir1. <br /><br />Konu: Film, lise öğrencisi
+          Marty McFly'nin (Michael J. Fox) eksantrik bilim insanı Dr. Emmett
+          Brown (Christopher Lloyd) tarafından yapılan bir zaman makinesiyle
+          1985 yılından 1955 yılına kazara gitmesini konu alır. Marty, 1955'te
+          genç anne ve babasıyla tanışır ve yanlışlıkla annesinin romantik
+          ilgisini çeker. Bu durum, anne ve babasının âşık olmasını engelleyerek
+          Marty'nin varlığını tehlikeye atar. Marty, hatasını düzeltip 1985
+          yılına geri dönmek zorundadır1.<br /><br />
+          Başarı: Film, 380 milyon dolar hasılat elde ederek yılın en başarılı
+          filmlerinden biri olmuştur. Hugo Ödülleri'nde En İyi Dramatik Sunum ve
+          Saturn Ödülleri'nde En İyi Bilimkurgu Filmi ödüllerini kazanmış,
+          ayrıca Akademi Ödülleri, BAFTA ve Altın Küre adaylıkları almıştır1.
+          Devam <br /><br />Filmleri: Filmin başarısının ardından, 1989 ve 1990
+          yıllarında iki devam filmi gösterime girmiştir. Ayrıca animasyon
+          serisi ve tema parkı açılmıştır
+        </p>
+        <div class="w3-row-padding">
+          <div class="w3-third w3-margin-bottom">
+            <img
+              src="images/gelecegedonus.jpg"
+              alt="Film İçeriği"
+              class="w3-image"
+            />
+          </div>
+        </div>
+        <h3>Film Özeti</h3>
+        <p>
+          Geleceğe Dönüş (Back to the Future) filminin kısa özeti: Lise
+          öğrencisi Marty McFly (Michael J. Fox), eksantrik bilim insanı Dr.
+          Emmett Brown (Christopher Lloyd) tarafından yapılan bir zaman
+          makinesiyle 1985 yılından 1955 yılına kazara gider1. Marty, 1955'te
+          genç anne ve babasıyla tanışır ve yanlışlıkla annesinin romantik
+          ilgisini çeker1. Bu durum, anne ve babasının âşık olmasını
+          engelleyerek Marty'nin varlığını tehlikeye atar. Marty, hatasını
+          düzeltip 1985 yılına geri dönmek zorundadır
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="w3-padding-64">
+      <div class="container">
+        <h2>İletişim</h2>
+        <p>Bizimle iletişime geçmek için formu doldurun.</p>
+        <button
+          class="w3-button w3-red"
+          onclick="window.location.href='https://forms.gle/xUwWydZedvy3EfYW6'"
+        >
+          Mesaj Gönder
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Film İçeriği &copy; 2024. Tüm Hakları Saklıdır. Powered by
+        <a href="#">Ömer Faruk Sönmez</a>.
+      </p>
+    </footer>
+  </body>
+</html>
