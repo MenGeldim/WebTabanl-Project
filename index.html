@@ -1,295 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
   <head>
-    <title>Sönmez Sinemaları</title>
-    <link rel="icon" href="/images/icon3.webp" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sönmez Sinemaları</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        font-family: "Times New Roman", Georgia, Serif;
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        color: #333;
       }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Playfair Display";
-        letter-spacing: 5px;
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
-      .w3-top {
-        z-index: 1;
+      nav .w3-bar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
       }
-      /* Mobile responsiveness */
-      @media screen and (max-width: 600px) {
-        .w3-bar-item {
-          font-size: 16px;
-        }
-        h1 {
-          font-size: 36px;
-        }
-        .w3-image {
-          width: 100% !important;
-        }
-        .w3-row > .w3-col {
-          width: 100% !important;
-          text-align: center;
-        }
-        .w3-col.s6 {
-          margin-bottom: 20px;
-        }
+      nav .w3-bar a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
       }
-
-      /* Slider Styling */
-      .w3-display-container .mySlides {
+      header {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+      header .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 750px;
-        object-fit: cover;
+        height: 100%;
       }
-
-      /* Hover Effect for Images */
-      .w3-image:hover {
-        transform: scale(1.1); /* Büyütme efekti */
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Gölgeleme efekti */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+      header .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: fade 12s infinite;
+        position: absolute;
+      }
+      header .slider img:nth-child(2) {
+        animation-delay: 4s;
+      }
+      header .slider img:nth-child(3) {
+        animation-delay: 8s;
+      }
+      @keyframes fade {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        33% {
+          opacity: 1;
+        }
+      }
+      header .w3-container {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+      }
+      header h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      header .w3-button {
+        background-color: #ff5e57;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .movie img {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .movie img:hover {
+        transform: scale(1.05);
+      }
+      .movie h3 {
+        margin: 10px 0;
+        color: #ff5e57;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        margin-top: 40px;
+      }
+      footer a {
+        color: #ff5e57;
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-      <div
-        class="w3-bar w3-white w3-padding w3-card"
-        style="letter-spacing: 4px"
-      >
+    <!-- Navbar -->
+    <nav>
+      <div class="w3-bar">
         <a href="#home" class="w3-bar-item w3-button">Sönmez Sinemaları</a>
-        <div class="w3-right w3-hide-small">
+        <div class="w3-right">
           <a href="#about" class="w3-bar-item w3-button">Hakkında</a>
           <a href="#movies" class="w3-bar-item w3-button">Filmler</a>
           <a href="#contact" class="w3-bar-item w3-button">İletişim</a>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- Header Section with Slider -->
-    <header
-      class="w3-display-container w3-content w3-wide"
-      style="max-width: 1600px; min-width: 500px"
-      id="home"
-    >
-      <!-- Slider -->
-      <div class="w3-display-container w3-content" style="max-width: 100%">
-        <img
-          class="mySlides w3-animate-fading"
-          src="images/100.jpg"
-          style="width: 100%"
-        />
-        <img
-          class="mySlides w3-animate-fading"
-          src="images/101.avif"
-          style="width: 100%"
-        />
-        <img
-          class="mySlides w3-animate-fading"
-          src="images/102.jpeg"
-          style="width: 100%"
-        />
+    <!-- Header with Slider -->
+    <header id="home">
+      <div class="slider">
+        <img src="images/72.webp" alt="x" />
+        <img src="images/71.jpg" alt="y" />
+        <img src="images/70.jpeg" alt="z" />
+        <img src="images/100.jpg" alt="t" />
+        <img src="images/101.avif" alt="m" />
+        <img src="images/102.jpeg" alt="z" />
       </div>
-
-      <!-- Title -->
-      <div class="w3-display-bottomleft w3-padding-large">
-        <h1 class="w3-xxlarge" style="background-color: antiquewhite">
-          Sönmez Sinemaları
-        </h1>
+      <div class="w3-container">
+        <h1>Sönmez Sinemaları</h1>
+        <p>Kaliteli Film Deneyimi</p>
+        <a href="#movies" class="w3-button">Filmlerimize Göz Atın</a>
       </div>
     </header>
 
-    <!-- Page content -->
-    <div class="w3-content" style="max-width: 1100px">
+    <!-- Main Content -->
+    <div class="w3-content w3-padding" style="max-width: 1200px">
       <!-- About Section -->
-      <div class="w3-row w3-padding-64" id="about">
-        <div class="w3-col m6 w3-padding-large w3-hide-small">
-          <img
-            src="/images/2.jpg"
-            class="w3-image w3-opacity-min"
-            alt="About"
-            style="width: 100%; height: 750px; object-fit: cover"
-          />
-        </div>
-
-        <div class="w3-col m6 w3-padding-large">
-          <h1 class="w3-center">Hakkında</h1>
-          <h5 class="w3-center">Gelenek 1950'den beri</h5>
-          <p class="w3-large">
-            Sönmez Sinemaları, 1950 yılında Ömer Faruk Sönmez tarafından
-            kurulmuştur. Kuruluşundan bu yana, sinemaseverlere kaliteli film
-            deneyimleri sunmayı amaçlayan şirket, Türkiye'nin en köklü sinema
-            zincirlerinden biri haline gelmiştir. Ömer Faruk Sönmez'in vizyonu
-            ve liderliği altında, Sönmez Sinemaları, yenilikçi teknolojiler ve
-            konforlu salonlarıyla tanınmaktadır. Şirket, her yaştan izleyiciye
-            hitap eden geniş bir film yelpazesi sunarak, aile filmlerinden
-            aksiyon ve dramalara kadar çeşitli türlerde yapımları izleyicilerle
-            buluşturmaktadır. Ayrıca, Sönmez Sinemaları, düzenlediği özel
-            etkinlikler ve film festivalleri ile de sinema kültürüne katkıda
-            bulunmaktadır. Müşteri memnuniyetini her zaman ön planda tutan
-            şirket, sinema salonlarında sunduğu yüksek kaliteli hizmetlerle
-            sektördeki lider konumunu sürdürmektedir.
-          </p>
-
-          <h5 class="w3-center">Kurucu</h5>
-          <p class="w3-large w3-text-grey">
-            Ömer Faruk Sönmez, sinema sektörüne olan tutkusuyla tanınan vizyoner
-            bir girişimcidir. 1925 yılında İstanbul'da doğan Sönmez, genç yaşta
-            sinemaya olan ilgisini keşfetmiş ve bu alanda kariyer yapmaya karar
-            vermiştir. 1950 yılında Sönmez Sinemaları'nı kurarak, Türkiye'de
-            sinema kültürünün gelişimine büyük katkılarda bulunmuştur.
-          </p>
-        </div>
-      </div>
-
-      <hr />
+      <section id="about" class="w3-padding-64">
+        <h2>Hakkında</h2>
+        <p>
+          Sönmez Sinemaları, 1950'den beri kaliteli film deneyimi sunmaktadır.
+        </p>
+      </section>
 
       <!-- Movies Section -->
-      <div class="w3-row w3-padding-64" id="movies">
-        <div class="w3-col l9 w3-padding-large">
-          <h1 class="w3-center">Filmler</h1>
-
-          <div class="w3-row">
-            <div class="w3-col s6">
-              <h4>7. Mühür</h4>
-              <p class="w3-text-grey">
-                Bu film, sinema kariyerimizde yayınlanmış ilk filmdir. 7. Mühür"
-                (The Seventh Seal), Ingmar Bergman'ın yönettiği 1957 yapımı bir
-                İsveç filmidir. Film, Haçlı Seferleri'nden dönen bir Orta Çağ
-                şövalyesi olan Antonius Block'un hikayesini anlatır. Antonius,
-                vebanın kasıp kavurduğu Avrupa'da Tanrı'ya olan inancını
-                sorgulamaktadır. Ölümle karşılaştığında, hayatını kurtarmak için
-                Ölüm'ü bir satranç oyununa davet eder. Bu süreçte, hayatın
-                anlamı, ölüm ve inanç gibi derin temalar işlenir.
-              </p>
-            </div>
-            <div class="w3-col s6">
-              <img
-                src="/images/mühür.jpg"
-                class="w3-round w3-image w3-opacity-min"
-                alt="7. Mühür"
-                style="width: 100%; height: auto"
-              />
-            </div>
+      <section id="movies" class="w3-padding-64">
+        <h2>Filmler</h2>
+        <div class="w3-row-padding">
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film1.html">
+              <img src="images/mühür.jpg" alt="7. Mühür" class="w3-image" />
+            </a>
+            <h3>7. Mühür</h3>
+            <p>Ingmar Bergman'ın unutulmaz filmi.</p>
           </div>
-
-          <div class="w3-row">
-            <div class="w3-col s6">
-              <h4>Godfather</h4>
-              <p class="w3-text-grey">
-                Bu film ilk oscar ödülü alan film yapımımızdır. "The Godfather,"
-                Mario Puzo'nun aynı adlı romanından uyarlanan ve Francis Ford
-                Coppola tarafından yönetilen 1972 yapımı bir filmdir. Film, New
-                York'ta yaşayan güçlü bir İtalyan mafya ailesi olan Corleone
-                ailesinin hikayesini anlatır. Ailenin başında Don Vito Corleone
-                (Marlon Brando) bulunmaktadır. Film, aile içi çatışmalar,
-                ihanetler ve güç mücadeleleri etrafında dönerken, Don Vito'nun
-                oğlu Michael Corleone'nin (Al Pacino) ailenin işlerini devralma
-                sürecini de işler.
-              </p>
-            </div>
-            <div class="w3-col s6">
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film2.html">
               <img
-                src="/images/godfather.jpg"
-                class="w3-round w3-image w3-opacity-min"
+                src="images/godfather.jpg"
                 alt="Godfather"
-                style="width: 100%; height: auto"
+                class="w3-image"
               />
-            </div>
+            </a>
+            <h3>Godfather</h3>
+            <p>Efsanevi mafya filmi.</p>
           </div>
-
-          <div class="w3-row">
-            <div class="w3-col s6">
-              <h4>Scarface</h4>
-              <p class="w3-text-grey">
-                Bu film en çok gişe hasılatı yaptığımız filmdir. Scarface,"
-                Brian De Palma'nın yönettiği ve Al Pacino'nun başrol oynadığı
-                1983 yapımı bir suç ve drama filmidir. Film, Kübalı bir mülteci
-                olan Tony Montana'nın (Al Pacino) Miami'de suç dünyasında
-                yükselişini ve açgözlülüğünü konu alır. Tony Montana, acımasız
-                yöntemleriyle uyuşturucu imparatorluğunu kurarken, güç ve para
-                hırsının onu nasıl yok ettiğini izleriz
-              </p>
-            </div>
-            <div class="w3-col s6">
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film3.html">
+              <img src="images/scareface.jpg" alt="Scarface" class="w3-image" />
+            </a>
+            <h3>Scarface</h3>
+            <p>Miami suç dünyasına bir yolculuk.</p>
+          </div>
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film4.html">
               <img
-                src="/images/scareface.jpg"
-                class="w3-round w3-image w3-opacity-min"
-                alt="Scarface"
-                style="width: 100%; height: auto"
+                src="images/SelviBoylumAlYazmalim.jpg"
+                alt="SelviBoylumAlYazmalim"
+                class="w3-image"
               />
-            </div>
+            </a>
+            <h3>Selvi Boylum Al Yazmalım</h3>
+            <p>Sinemamızda en çok izlenen Türk filmidir.</p>
           </div>
-
-          <div class="w3-row">
-            <div class="w3-col s6">
-              <h4>Selvi Boylum Al Yazmalım</h4>
-              <p class="w3-text-grey">
-                Bu film yayınlanmış ilk Türk filmidir.Selvi Boylum Al Yazmalım,"
-                1977 yapımı bir Türk filmidir. Atıf Yılmaz'ın yönettiği film,
-                Cengiz Aytmatov'un aynı adlı eserinden uyarlanmıştır.
-                Başrollerinde Türkan Şoray ve Kadir İnanır'ın yer aldığı film,
-                Asya ve İlyas'ın destansı aşk hikayesini anlatır. Film, sevgi,
-                sadakat ve fedakarlık temalarını işler ve Türk sinemasının en
-                unutulmaz yapımlarından biri olarak kabul edilir.
-              </p>
-            </div>
-            <div class="w3-col s6">
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film5.html">
               <img
-                src="/images/SelviBoylumAlYazmalim.jpg"
-                class="w3-round w3-image w3-opacity-min"
-                alt="Selvi Boylum Al Yazmalım"
-                style="width: 100%; height: auto"
+                src="images/yuzuklerinefendisi2.jpg"
+                alt="Yüzüklerin Efendisi"
+                class="w3-image"
               />
-            </div>
+            </a>
+            <h3>Yüzüklerin Efendisi</h3>
+            <p>Sinemamızda yayınlanan ilk fantastik film.</p>
           </div>
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film6.html">
+              <img
+                src="images/iyikötücirkin.jpg"
+                alt="İyi Kötü Çirkin"
+                class="w3-image"
+              />
+            </a>
+            <h3>İyi, Kötü, Çirkin</h3>
+            <p>İlk kovboy filmi.</p>
+          </div>
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film7.html">
+              <img
+                src="images/gelecegedonus.jpg"
+                alt="Gelecege Donus"
+                class="w3-image"
+              />
+            </a>
+            <h3>Geleceğe Dönüş</h3>
+            <p>En yüksek gişe yapan bilim kurgu filmi.</p>
+          </div>
+          <div class="w3-third w3-margin-bottom movie">
+            <a href="film8.html">
+              <img
+                src="images/karasovalye.jpg"
+                alt="Kara Şovalye"
+                class="w3-image"
+              />
+            </a>
+            <h3>Kara Şovalye</h3>
+            <p>En yüksek gişe yapan DC filmidir.</p>
+          </div>
+          <!-- Diğer filmleri benzer şekilde ekle -->
         </div>
-      </div>
-
-      <hr />
+      </section>
 
       <!-- Contact Section -->
-      <div class="w3-container w3-padding-64" id="contact">
-        <h1>İletişim</h1>
-        <p>Bizimle iletişime geçmek için aşağıdaki butona tıklayın.</p>
+      <section id="contact" class="w3-padding-64">
+        <h2>İletişim</h2>
+        <p>Bizimle iletişime geçmek için formu doldurun.</p>
         <button
-          class="w3-button w3-light-grey w3-section"
-          onclick="window.location.href='https://forms.gle/xUwWydZedvy3EfYW6';"
+          class="w3-button w3-red"
+          onclick="window.location.href='https://forms.gle/xUwWydZedvy3EfYW6'"
         >
-          MESAJ GÖNDER
+          Mesaj Gönder
         </button>
-      </div>
-
-      <!-- Footer -->
-      <footer class="w3-center w3-light-grey w3-padding-32">
-        <p>Powered by Ömer Faruk Sönmez</p>
-      </footer>
+      </section>
     </div>
 
-    <!-- Slider Script -->
-    <script>
-      var slideIndex = 0;
-      carousel();
-
-      function carousel() {
-        var slides = document.getElementsByClassName("mySlides");
-        for (var i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(carousel, 5000); // Change image every 5 seconds
-      }
-    </script>
+    <!-- Footer -->
+    <footer>
+      <p>
+        Sönmez Sinemaları &copy; 2024. Tüm Hakları Saklıdır. Powered by
+        <a href="#">Ömer Faruk Sönmez</a>.
+      </p>
+    </footer>
   </body>
 </html>
